@@ -9,6 +9,8 @@ function App() {
   const aboutRef = useRef(null)
   const servicesRef = useRef(null)
   const teamRef = useRef(null)
+  const contactRef = useRef(null)
+
 
   const [solidNavbar, setSolidNavbar] = useState(false);
 
@@ -23,8 +25,8 @@ function App() {
 
   return (
     <div onScroll={changeNavbar} className="App">
-        <NavBar solidNavbar={solidNavbar} homeRef={homeRef} aboutRef={aboutRef} servicesRef={servicesRef} teamRef={teamRef}></NavBar>
-        <Content homeRef={homeRef} aboutRef={aboutRef} servicesRef={servicesRef} teamRef={teamRef}></Content>
+        <NavBar solidNavbar={solidNavbar} homeRef={homeRef} aboutRef={aboutRef} servicesRef={servicesRef} teamRef={teamRef} contactRef={contactRef}></NavBar>
+        <Content homeRef={homeRef} aboutRef={aboutRef} servicesRef={servicesRef} teamRef={teamRef} contactRef={contactRef}></Content>
     </div>
   );
 }

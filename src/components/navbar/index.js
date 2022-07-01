@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { GetInTouch, NavBody, NavTab, NavTabs } from './style';
 
-const NavBar = ({solidNavbar, homeRef, aboutRef, servicesRef, teamRef}) => {
+export const scrollTo = (ref) => {
+  ref.current.scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});  
+}
 
-    const scrollTo = (ref) => {
-        ref.current.scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});  
-    }
+
+const NavBar = ({solidNavbar, homeRef, aboutRef, servicesRef, teamRef, contactRef}) => {
+
 
     console.log(useOnScreen(aboutRef, "50px"))
 
@@ -16,9 +18,9 @@ const NavBar = ({solidNavbar, homeRef, aboutRef, servicesRef, teamRef}) => {
                 <NavTab isSelected={useOnScreen(aboutRef)} onClick={() => scrollTo(aboutRef)}>About</NavTab>
                 <NavTab isSelected={useOnScreen(servicesRef)} onClick={() => scrollTo(servicesRef)}>Services</NavTab>
                 <NavTab isSelected={useOnScreen(teamRef)} onClick={() => scrollTo(teamRef)}>Team</NavTab>
-                <NavTab>Contact Us</NavTab>
+                <NavTab isSelected={useOnScreen(contactRef)} onClick={() => scrollTo(contactRef)}>Contact Us</NavTab>
             </NavTabs>
-            <GetInTouch>Get in touch</GetInTouch>
+            <GetInTouch onClick={() => scrollTo(contactRef)}>Get in touch</GetInTouch>
         </NavBody>
     );
 }

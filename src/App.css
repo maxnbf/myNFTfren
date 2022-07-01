@@ -16,3 +16,7 @@
   left: 0px;
   opacity: 0.2;
 }
+
+.calendly-inline-widget {
+  height: 900px !important;
+}

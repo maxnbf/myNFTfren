@@ -28,6 +28,7 @@ export const BookAMeeting = styled.div`
     text-decoration: underline;
     color: #36B3A1;
     font-weight: bold;
+    cursor: pointer;
 `
 
 export const CountUpText = styled(CountUp)`

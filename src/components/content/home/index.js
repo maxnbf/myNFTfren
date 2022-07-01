@@ -14,19 +14,20 @@ import img9 from "../../../assets/Loser Club9.png"
 import img10 from "../../../assets/Memeland10.png"
 import img11 from "../../../assets/Rarebears11.png"
 import img12 from "../../../assets/Tasty Bones12.png"
+import { scrollTo } from '../../navbar';
 
 const whitelist = [{src: img1, name:"Invisible Friends"}, {src: img2, name:"HAPE Prime"}, {src: img3, name:"The Possessed"}, {src: img4, name:"Sneakerheads"},
 {src: img5, name:"Degen Toonz"}, {src: img6, name:"3landers"}, {src: img7, name:"Karafuru"}, {src: img8, name:"Wonderpals"},
 {src: img9, name:"Loser Club"}, {src: img10, name:"Memeland"}, {src: img11, name:"Rarebears"}, {src: img12, name:"Tasty Bones"}]
 
-const Home = ({homeRef}) => {
+const Home = ({homeRef, contactRef}) => {
 
     return (
         <div>
             <Logo ref={homeRef} src={logo} />
             <SubText>Whitelist grind, Fan art, Marketing lists, and more!</SubText>
             <SubText>Your virtual NFT assistant to handle any and all tasks</SubText>
-            <BookAMeeting>Book a meeting</BookAMeeting>
+            <BookAMeeting onClick={() => scrollTo(contactRef)}>Book a meeting</BookAMeeting>
             
             <InfoRow>
                 <InfoContainer>

@@ -37,4 +37,5 @@ export const GetInTouch = styled.div`
     padding: 20px;
     width: 8%;
     justify-content: center;
+    cursor: pointer;
 `
