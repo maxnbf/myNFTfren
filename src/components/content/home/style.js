@@ -7,8 +7,8 @@ export const Logo = styled.img`
     width: 60%;
     display: flex;
     margin: auto;
-    margin-top: -175px;
-    margin-bottom: -225px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 `
 
 export const SubText = styled.div`

@@ -25,6 +25,7 @@ export const NavTabs = styled.div`
 export const NavTab = styled.div`
     color: ${(p) => p.isSelected ? '#36B3A1' : 'white'};
     text-decoration:  ${(p) => p.isSelected ? 'underline' : 'none'}; 
+    cursor: pointer;
 `
 
 export const GetInTouch = styled.div`

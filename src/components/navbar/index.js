@@ -10,17 +10,14 @@ const NavBar = ({solidNavbar, homeRef, aboutRef}) => {
        
     }
 
-    console.log('home on?', useOnScreen(homeRef, "-10px"))
-    console.log('about on?', useOnScreen(aboutRef, "-10px"))
-
     return (
         <NavBody isSolid={solidNavbar} >
             <NavTabs>
-                <NavTab isSelected={true} onClick={() => scrollTo(homeRef)}>Home</NavTab>
-                <div onClick={() => scrollTo(aboutRef)}>About</div>
-                <div>Services</div>
-                <div>The Team</div>
-                <div>Contact Us</div>
+                <NavTab isSelected={useOnScreen(homeRef)} onClick={() => scrollTo(homeRef)}>Home</NavTab>
+                <NavTab isSelected={useOnScreen(aboutRef)} onClick={() => scrollTo(aboutRef)}>About</NavTab>
+                <NavTab>Services</NavTab>
+                <NavTab>The Team</NavTab>
+                <NavTab>Contact Us</NavTab>
             </NavTabs>
             <GetInTouch>Get in touch</GetInTouch>
         </NavBody>
