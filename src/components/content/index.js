@@ -5,14 +5,14 @@ import Services from './services';
 import { ContentBody } from './style';
 import Team from './team';
 
-const Content = ({homeRef, aboutRef}) => {
+const Content = ({homeRef, aboutRef, servicesRef, teamRef}) => {
 
     return (
         <ContentBody id="content">
             <Home homeRef={homeRef} id="#home"/>
             <About aboutRef={aboutRef} id="#about"/>
-            <Services id="services"/>
-            <Team id="team"/>
+            <Services servicesRef={servicesRef} id="services"/>
+            <Team teamRef={teamRef} id="team"/>
         </ContentBody>
     )
 }

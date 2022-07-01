@@ -1,13 +1,13 @@
 import React from 'react';
-import { AboutHeader } from '../about/style';
 import headshot from "../../../assets/Headshot.png"
 import nft from "../../../assets/Psychedelic NFT.png"
 import { Headshot, Images, JesseBody, JesseDescription, NFT, TeamDescription } from './style';
+import { SectionHeader } from '../style';
 
-const Team = () => {
+const Team = ({teamRef}) => {
     return (
         <div>
-            <AboutHeader>Meet the Team</AboutHeader>
+            <SectionHeader ref={teamRef} scrollMargin={100}>Meet the Team</SectionHeader>
             <JesseBody>
                 <Images>
                     <Headshot src={headshot}/>

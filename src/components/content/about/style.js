@@ -1,13 +1,5 @@
 import styled from 'styled-components'
 
-export const AboutHeader = styled.div`
-    font-size: 52px;
-    font-weight: bolder;
-    color: #36B3A1;
-    margin-top: 300px;
-    margin-bottom: 100px;
-    text-align: center;
-`
 
 export const AboutBody = styled.div`
     font-weight: bold;
@@ -17,5 +9,6 @@ export const AboutBody = styled.div`
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    padding-bottom: 200px;
     
 `

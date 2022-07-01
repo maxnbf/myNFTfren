@@ -7,8 +7,9 @@ export const Logo = styled.img`
     width: 60%;
     display: flex;
     margin: auto;
-    margin-top: 50px;
+    padding-top: 50px;
     margin-bottom: 50px;
+    scroll-margin-top: 100px;
 `
 
 export const SubText = styled.div`
@@ -42,7 +43,7 @@ export const InfoRow = styled.div`
     display: flex;
     justify-content: space-evenly;
     margin-top: 50px;
-    margin-bottom: 100px;
+    padding-bottom: 150px;
 `
 
 export const InfoContainer = styled.div`

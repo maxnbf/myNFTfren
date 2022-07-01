@@ -1,12 +1,12 @@
 import React from 'react';
-import { AboutHeader } from '../about/style';
+import { SectionHeader } from '../style';
 import { ServiceCard, ServiceCardDescription, ServiceCardHeader, ServiceCardPayment, ServiceCardPaymentContainer, ServiceCards } from './style';
 
-const Services = () => {
+const Services = ({servicesRef}) => {
 
     return (
         <div>
-            <AboutHeader>Our Services</AboutHeader>
+            <SectionHeader ref={servicesRef} scrollMargin={100}>Our Services</SectionHeader>
             <ServiceCards>
                 <ServiceCard scale={0.9}>
                     <ServiceCardHeader>Fan Art Creator</ServiceCardHeader>

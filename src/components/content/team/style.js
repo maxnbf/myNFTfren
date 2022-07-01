@@ -36,5 +36,5 @@ export const TeamDescription = styled.div`
     margin-top: 100px;
     text-align: center;
     font-weight: bolder;
-    margin-bottom: 100px;
+    padding-bottom: 100px;
 `
