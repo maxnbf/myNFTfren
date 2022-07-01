@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/navbar';
+import Content from './components/content';
+import { useRef, useState } from 'react';
 
 function App() {
+
+  const homeRef = useRef(null)
+  const aboutRef = useRef(null)
+
+  const [solidNavbar, setSolidNavbar] = useState(false);
+
+
+  const changeNavbar = (e) => {
+      if (e.target.scrollTop > 50) {
+          setSolidNavbar(true);
+      } else {
+          setSolidNavbar(false);
+      }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link "
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div onScroll={changeNavbar} className="App">
+        <NavBar solidNavbar={solidNavbar} homeRef={homeRef} aboutRef={aboutRef}></NavBar>
+        <Content homeRef={homeRef} aboutRef={aboutRef}></Content>
     </div>
   );
 }
