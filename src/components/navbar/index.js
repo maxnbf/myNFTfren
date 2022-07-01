@@ -16,7 +16,7 @@ const NavBar = ({solidNavbar, homeRef, aboutRef}) => {
                 <NavTab isSelected={useOnScreen(homeRef)} onClick={() => scrollTo(homeRef)}>Home</NavTab>
                 <NavTab isSelected={useOnScreen(aboutRef)} onClick={() => scrollTo(aboutRef)}>About</NavTab>
                 <NavTab>Services</NavTab>
-                <NavTab>The Team</NavTab>
+                <NavTab>Team</NavTab>
                 <NavTab>Contact Us</NavTab>
             </NavTabs>
             <GetInTouch>Get in touch</GetInTouch>

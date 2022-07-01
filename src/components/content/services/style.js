@@ -11,6 +11,8 @@ export const ServiceCard = styled.div`
     margin: 10px;
     width: 475px;
     height: 625px;
+
+    transform: scale(${(p) => p.scale})
 `
 
 export const ServiceCardHeader = styled.div`

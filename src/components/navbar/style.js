@@ -11,6 +11,7 @@ export const NavBody = styled.div`
 
     background: ${(p) => p.isSolid ? '#1F2255' : 'transparent'};
     opacity: 0.95;
+    z-index: 10;
 `
 
 export const NavTabs = styled.div`
