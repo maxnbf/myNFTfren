@@ -44,6 +44,7 @@ export const ServiceCardPayment = styled.div`
     color: white;
     justify-content: center;
     display: flex;
+    cursor: pointer;
 `
 
 

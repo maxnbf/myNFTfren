@@ -2,6 +2,7 @@ import './App.css';
 import NavBar from './components/navbar';
 import Content from './components/content';
 import { useRef, useState } from 'react';
+import { ModalProvider } from './modal/modalContext';
 
 function App() {
 
@@ -24,10 +25,12 @@ function App() {
   }
 
   return (
-    <div onScroll={changeNavbar} className="App">
-        <NavBar solidNavbar={solidNavbar} homeRef={homeRef} aboutRef={aboutRef} servicesRef={servicesRef} teamRef={teamRef} contactRef={contactRef}></NavBar>
-        <Content homeRef={homeRef} aboutRef={aboutRef} servicesRef={servicesRef} teamRef={teamRef} contactRef={contactRef}></Content>
-    </div>
+    <ModalProvider>
+      <div onScroll={changeNavbar} className="App">
+          <NavBar solidNavbar={solidNavbar} homeRef={homeRef} aboutRef={aboutRef} servicesRef={servicesRef} teamRef={teamRef} contactRef={contactRef}></NavBar>
+          <Content homeRef={homeRef} aboutRef={aboutRef} servicesRef={servicesRef} teamRef={teamRef} contactRef={contactRef}></Content>
+      </div>
+    </ModalProvider>
   );
 }
 
