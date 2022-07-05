@@ -1,7 +1,7 @@
 import { send } from 'emailjs-com';
 import { ethers } from "ethers";
 
-export const submitPayment = async (eth, emailData) => {
+export const submitPayment = async (eth, emailData, handleModal) => {
 
     let message = "Eth Wallet:".concat(" ", emailData.ethwallet).concat("  Sol Wallet:", emailData.solwallet)
     message = message.concat("  Additional Info: ", emailData.additional);
@@ -17,11 +17,11 @@ export const submitPayment = async (eth, emailData) => {
         },
         process.env.REACT_APP_EMAIL_USER_ID,
       ).then(() => {
-        useMakeTransaction(eth)
+        useMakeTransaction(eth, handleModal)
       })
 }
 
-export const useMakeTransaction = async (eth) => {
+export const useMakeTransaction = async (eth, handleModal) => {
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     
@@ -33,6 +33,6 @@ export const useMakeTransaction = async (eth) => {
     await signer.sendTransaction({
       to:  process.env.REACT_APP_WALLET_ADDRESS,
       value: ethers.utils.parseEther(eth)
-    }).then(() => window.location.reload()).catch(err => console.log('hello'));
+    }).then(() => handleModal()).catch(err => console.log('hello'));
 
 }

@@ -1,10 +1,12 @@
 import { Form, Formik } from 'formik';
-import React from 'react';
+import React, { useContext } from 'react';
+import { ModalContext } from '../../modal/modalContext';
 import { submitPayment } from './helpers';
 import { Error, InputField, InputTextArea, ModalHeader, PayButton } from './style';
 
 const PaymentModal = ({text, eth}) => {
 
+    const { handleModal } = useContext(ModalContext)
     return (
         <Formik
             initialValues={{ name: '', email: '', ethwallet: '', solwallet: '', additional: '' }}
@@ -22,7 +24,7 @@ const PaymentModal = ({text, eth}) => {
                 return errors;
             }}
             onSubmit={(values, { setSubmitting }) => {
-                submitPayment(eth, values)
+                submitPayment(eth, values, handleModal)
                 setSubmitting(false)
             }}
             >
