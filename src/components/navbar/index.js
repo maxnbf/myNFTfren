@@ -8,9 +8,6 @@ export const scrollTo = (ref) => {
 
 const NavBar = ({solidNavbar, homeRef, aboutRef, servicesRef, teamRef, contactRef}) => {
 
-
-    console.log(useOnScreen(aboutRef, "50px"))
-
     return (
         <NavBody isSolid={solidNavbar} >
             <NavTabs>

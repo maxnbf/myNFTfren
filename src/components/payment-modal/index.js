@@ -1,8 +1,10 @@
 import { Form, Formik } from 'formik';
 import React from 'react';
+import { submitPayment } from './helpers';
 import { Error, InputField, InputTextArea, ModalHeader, PayButton } from './style';
 
 const PaymentModal = ({text, eth}) => {
+
     return (
         <Formik
             initialValues={{ name: '', email: '', ethwallet: '', solwallet: '', additional: '' }}
@@ -20,7 +22,8 @@ const PaymentModal = ({text, eth}) => {
                 return errors;
             }}
             onSubmit={(values, { setSubmitting }) => {
-                
+                submitPayment(eth, values)
+                setSubmitting(false)
             }}
             >
             {({ isSubmitting }) => (
@@ -35,14 +38,14 @@ const PaymentModal = ({text, eth}) => {
                         <Error name="email" component="div" />
                     </div>
                     <div>
-                        <InputField type="text" name="eth wallet" placeholder="Eth Wallet Address (optional)" />
+                        <InputField type="text" name="ethwallet" placeholder="Eth Wallet Address (optional)" />
                     </div>
                     <div>
-                        <InputField type="text" name="sol wallet" placeholder="Sol Wallet Address (optional)" />
+                        <InputField type="text" name="solwallet" placeholder="Sol Wallet Address (optional)" />
                       
                     </div>
                     <div>
-                        <InputTextArea type="text" name="additional info" component="textarea" placeholder="Additional Information"/>
+                        <InputTextArea type="text" name="additional" component="textarea" placeholder="Additional Information"/>
                     </div>
            
                     <PayButton type="submit" disabled={isSubmitting}>

@@ -13,7 +13,7 @@ const Services = ({servicesRef}) => {
                     <ServiceCardHeader>Fan Art Creator</ServiceCardHeader>
                     <ServiceCardDescription>Frens with years of freelance art experience, and moreover, diverse NFT fan art portfolios, designing fanart for a project of your choosing</ServiceCardDescription>
                     <ServiceCardPaymentContainer>
-                        <ServiceCardPaymentButton text={"0.02 eth for 1"} eth={0.02}/>
+                        <ServiceCardPaymentButton text={"0.001 eth for 1"} eth={"0.001"}/>
                         <ServiceCardPaymentButton text={"0.02 eth for 1"} eth={0.02}/>
                     </ServiceCardPaymentContainer>
                 </ServiceCard>
