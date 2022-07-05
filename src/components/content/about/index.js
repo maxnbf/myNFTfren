@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { useInViewport } from 'react-in-viewport';
 import { SectionHeader } from '../style';
 import { AboutBody } from './style';
@@ -7,9 +7,8 @@ import { AboutBody } from './style';
 const About = ({aboutRef}) => {
 
     const myRef = useRef();
-    const { inViewport, enterCount, leaveCount } = useInViewport(myRef);
+    const { inViewport, enterCount } = useInViewport(myRef);
 
-    console.log(inViewport, enterCount, leaveCount)
 
     return (
         <div ref={myRef}>

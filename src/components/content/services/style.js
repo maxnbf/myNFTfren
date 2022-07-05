@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 export const ServiceCards = styled.div`
     display: flex;
@@ -6,12 +6,25 @@ export const ServiceCards = styled.div`
     margin: auto;
 `
 
+const slidedown = keyframes`
+ 0% { margin-top: -200px; opacity: 0; }
+ 100% { margin-top: 0px; opacity: 1; }
+`
+
+const slideup = keyframes`
+ 0% { margin-top: 200px; opacity: 0; }
+ 100% { margin-top: 0px; opacity: 1; }
+`
+
+
 export const ServiceCard = styled.div`
     border: 5px solid #36B3A1;
     margin: 10px;
     width: 475px;
     height: 625px;
 
+    animation-name: ${(p) => p.inViewport ? p.card === 1 ? slideup : slidedown : 'none'};
+    animation-duration: 2s;
     transform: scale(${(p) => p.scale})
 `
 
