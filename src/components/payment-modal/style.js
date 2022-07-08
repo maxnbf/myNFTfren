@@ -28,6 +28,9 @@ export const InputField = styled(Field)`
     &::placeholder {
         color: #36B3A1;
         opacity: .7;
+        @media (max-width: 767px) {
+            font-size: 24px;
+        }
     }
 `
 
@@ -49,6 +52,11 @@ export const PayButton = styled.button`
     margin-top: 40px;
     cursor: pointer;
     margin-bottom: -20px;
+
+    @media (max-width: 767px) {
+        font-size: 22px;
+        border-radius: 60px;
+    }
 `
 
 export const Error = styled(ErrorMessage)`

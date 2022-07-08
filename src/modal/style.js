@@ -24,6 +24,11 @@ export const ModalBody = styled.div`
     width: 50%;
     transform: scale(.7);
     margin-top: 50px;
+
+    @media (max-width: 767px) {
+        width: 90%;
+    }
+
 `
 
 export const ModalClose = styled.button`
