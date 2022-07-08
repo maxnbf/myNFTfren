@@ -3,10 +3,13 @@ import styled from 'styled-components'
 export const ContentBody = styled.div`
     height: auto;
     position: relative;
+
+    width: 85%;
+    margin: auto;
 `
 
 export const SectionHeader = styled.div`
-    font-size: 52px;
+    font-size: 44px;
     font-weight: bolder;
     color: #36B3A1;
     margin-top: 300px;

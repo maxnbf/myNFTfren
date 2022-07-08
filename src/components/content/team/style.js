@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components'
 
 export const JesseBody = styled.div`
     display: flex;
-    width: 80%;
+    width: 70%;
     margin: auto;
 
     @media (max-width: 767px) {
@@ -31,7 +31,7 @@ const slideup = keyframes`
 `
 
 export const JesseDescription = styled.div`
-    font-size: 32px;
+    font-size: 24px;
     color: white;
     font-weight: bold;
     margin-left: 40px;
@@ -55,43 +55,39 @@ const slideinright = keyframes`
 `
 
 export const Headshot = styled.img`
-    height: 250px;
+    height: 175px;
     border-radius: 125px;
-    width: 250px;
+    width: 175px;
     border: 3px solid #36B3A1;
     animation-name: ${(p) => p.inViewport ? slideup: 'none'};
     animation-duration: 2s;
 
     @media (max-width: 767px) {
-        height: 175px;
-        width: 175px;
         animation-name: ${(p) => p.inViewport ? slideinleft: 'none'};
         
     }
 `
 
 export const NFT = styled(Headshot)`
-    margin-left: -70px;
+    margin-left: -50px;
     animation-name: ${(p) => p.inViewport ? slidedown: 'none'};
 
     @media (max-width: 767px) {
-        margin-left: -50px;
-        animation-name: ${(p) => p.inViewport ? slideinright: 'none'};
-        
+        animation-name: ${(p) => p.inViewport ? slideinright: 'none'};      
     }
 `
 
 const maintainloc = keyframes`
-    0% { margin-top: -100px; }
-    100% { margin-top: 100px; }
+    0% { margin-top: -150px; }
+    100% { margin-top: 50px; }
 `
 
 export const TeamDescription = styled.div`
-    width: 70%;
+    width: 65%;
     margin: auto;
-    font-size: 32px;
+    font-size: 20px;
     color: white;
-    margin-top: 100px;
+    margin-top: 50px;
     text-align: center;
     font-weight: bolder;
     padding-bottom: 100px;

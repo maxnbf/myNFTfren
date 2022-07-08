@@ -4,7 +4,7 @@ import CountUp from 'react-countup';
 
 
 export const Logo = styled.img`
-    width: 50%;
+    width: 40%;
     display: flex;
     margin: auto;
     padding-top: 50px;
@@ -21,8 +21,9 @@ export const SubText = styled.div`
     width: 100%;
     text-align: center;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
     margin: 8px 0;
+    font-family: 'Neuropol', sans-serif;
 
     @media (max-width: 767px) {
         width: 90%;
@@ -32,12 +33,20 @@ export const SubText = styled.div`
 `
 
 export const BookAMeeting = styled.div`
-    font-size: 32px;
-    text-align: center;
-    margin-top: 32px;
-    text-decoration: underline;
+    font-size: 28px;
+
     color: #36B3A1;
     font-weight: bold;
+
+    border: 3px solid #36B3A1;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    width: fit-content;
+    margin: auto;
+    margin-top: 30px;
+
+    justify-content: center;
     cursor: pointer;
 `
 
@@ -64,7 +73,7 @@ export const InfoRow = styled.div`
 export const InfoContainer = styled.div`
     border: 6px solid #36B3A1;
     padding: 20px;
-    width: 500px;
+    width: 30%;
     height: 200px;
 
     @media (max-width: 767px) {
@@ -95,11 +104,8 @@ export const Icons = styled.div`
 
 export const IconName = styled.div`
     color: white;
-    display: none;   
-
-    @media (max-width: 767px) {
-        width: max-content;
-    }
+    display: none;  
+    width: max-content; 
 `
 
 
@@ -120,7 +126,11 @@ export const IconWrapper = styled.div`
 
     &:hover ${IconImage} {
         margin-bottom: 0px;  
+        height: 55px;
+        width: 55px;
+        margin-top: -20px;
     }
+
 `
  
 

@@ -7,8 +7,8 @@ import twitter from "../../../assets/twitter.png"
 const Contact = ({contactRef}) => {
 
     return (
-        <div>
-            <SectionHeader ref={contactRef} scrollMargin={150}>ContactUs</SectionHeader>
+        <div ref={contactRef} style={{scrollMarginTop: '100px'}}>
+            <SectionHeader scrollMargin={150}>ContactUs</SectionHeader>
             <InlineWidget url="https://calendly.com/mynftfren/infocall" />
             <SocialMedia>
                 <MediaItem>
