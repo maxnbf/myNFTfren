@@ -1,12 +1,14 @@
 import { Form, Formik } from 'formik';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { ModalContext } from '../../modal/modalContext';
 import { submitPayment } from './helpers';
-import { Error, InputField, InputTextArea, ModalHeader, PayButton } from './style';
+import { Error, InputField, InputTextArea, ModalHeader, PayButton, PaymentError } from './style';
 
 const PaymentModal = ({text, eth}) => {
 
     const { handleModal } = useContext(ModalContext)
+
+    const [submitError, setSubmitError] = useState(false)
     return (
         <Formik
             initialValues={{ name: '', email: '', ethwallet: '', solwallet: '', twitter: "", additional: '' }}
@@ -24,7 +26,7 @@ const PaymentModal = ({text, eth}) => {
                 return errors;
             }}
             onSubmit={(values, { setSubmitting }) => {
-                submitPayment(eth, values, handleModal)
+                submitPayment(eth, values, handleModal, setSubmitError)
                 setSubmitting(false)
             }}
             >
@@ -55,6 +57,7 @@ const PaymentModal = ({text, eth}) => {
                     <PayButton type="submit" disabled={isSubmitting}>
                         Complete payment of {eth} eth
                     </PayButton>
+                    {submitError && <PaymentError>Error - ensure you have funds (including gas prices)</PaymentError>}
                 </Form>
             )}
         </Formik>

@@ -7,6 +7,10 @@ export const ModalHeader = styled.div`
     font-weight: bolder;
     text-align: center;
     margin-bottom: 20px;
+
+    @media (max-width: 767px) {
+        font-size: 28px;
+    }
 `
 
 export const InputField = styled(Field)`
@@ -63,4 +67,10 @@ export const Error = styled(ErrorMessage)`
     position: absolute;
     color: red;
     margin-left: 10px;
+`
+
+export const PaymentError = styled.div`
+    position: absolute;
+    bottom: 20px;
+    color: red;
 `

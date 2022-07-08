@@ -27,6 +27,7 @@ export const ModalBody = styled.div`
 
     @media (max-width: 767px) {
         width: 90%;
+        height: 70%;
     }
 
 `
@@ -44,4 +45,19 @@ export const ModalClose = styled.button`
 `
 export const ModalContent = styled.div`
     width: 100%;
+    
+    @media (max-width: 767px) {
+        overflow: overlay !important;
+        padding-right: 50px;
+    }
+`
+
+export const ScrollNotice = styled.div`
+    color: gray;
+    position: absolute;
+    bottom: 40px;
+
+    @media (min-width: 767px) {
+        display: none;
+    }
 `
