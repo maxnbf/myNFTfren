@@ -4,12 +4,16 @@ import CountUp from 'react-countup';
 
 
 export const Logo = styled.img`
-    width: 60%;
+    width: 50%;
     display: flex;
     margin: auto;
     padding-top: 50px;
     margin-bottom: 50px;
     scroll-margin-top: 100px;
+
+    @media (max-width: 767px) {
+        width: 70%;
+    }
 `
 
 export const SubText = styled.div`
@@ -19,6 +23,12 @@ export const SubText = styled.div`
     font-weight: bold;
     font-size: 24px;
     margin: 8px 0;
+
+    @media (max-width: 767px) {
+        width: 90%;
+        font-size: 18px;
+        margin: auto;
+    }
 `
 
 export const BookAMeeting = styled.div`
@@ -45,6 +55,10 @@ export const InfoRow = styled.div`
     justify-content: space-evenly;
     margin-top: 50px;
     padding-bottom: 150px;
+
+    @media (max-width: 767px) {
+        display: block;
+    }
 `
 
 export const InfoContainer = styled.div`
@@ -52,6 +66,12 @@ export const InfoContainer = styled.div`
     padding: 20px;
     width: 500px;
     height: 200px;
+
+    @media (max-width: 767px) {
+        height: auto;
+        width: auto;
+        margin: 20px;
+    }
 `
 
 export const InfoHeader = styled.div`
@@ -66,12 +86,20 @@ export const Icons = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @media (max-width: 767px) {
+        margin-top: 15px;
+    }
 `
 
 
 export const IconName = styled.div`
     color: white;
     display: none;   
+
+    @media (max-width: 767px) {
+        width: max-content;
+    }
 `
 
 

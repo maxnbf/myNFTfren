@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { GetInTouch, NavBody, NavTab, NavTabs } from './style';
+import { GetInTouch, MobileNavButton, MobileNavMenu, NavBody, NavTab, NavTabs } from './style';
+import MobileMenuButton from '../../assets/menubutton.png'
 
 export const scrollTo = (ref) => {
   ref.current.scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});  
@@ -8,16 +9,35 @@ export const scrollTo = (ref) => {
 
 const NavBar = ({solidNavbar, homeRef, aboutRef, servicesRef, teamRef, contactRef}) => {
 
+    const [mobileNav, setMobileNav] = useState(false)
+    console.log(mobileNav)
+
+    const isHomeOnScreen = useOnScreen(homeRef);
+    const isAboutonScreen = useOnScreen(aboutRef);
+    const isServicesOnScreen = useOnScreen(servicesRef);
+    const isTeamOnScreen = useOnScreen(teamRef);
+    const isContactOnScreen = useOnScreen(contactRef);
     return (
         <NavBody isSolid={solidNavbar} >
             <NavTabs>
-                <NavTab isSelected={useOnScreen(homeRef)} onClick={() => scrollTo(homeRef)}>Home</NavTab>
-                <NavTab isSelected={useOnScreen(aboutRef)} onClick={() => scrollTo(aboutRef)}>About</NavTab>
-                <NavTab isSelected={useOnScreen(servicesRef)} onClick={() => scrollTo(servicesRef)}>Services</NavTab>
-                <NavTab isSelected={useOnScreen(teamRef)} onClick={() => scrollTo(teamRef)}>Team</NavTab>
-                <NavTab isSelected={useOnScreen(contactRef)} onClick={() => scrollTo(contactRef)}>Contact Us</NavTab>
+                <NavTab isSelected={isHomeOnScreen} onClick={() => scrollTo(homeRef)}>Home</NavTab>
+                <NavTab isSelected={isAboutonScreen} onClick={() => scrollTo(aboutRef)}>About</NavTab>
+                <NavTab isSelected={isServicesOnScreen} onClick={() => scrollTo(servicesRef)}>Services</NavTab>
+                <NavTab isSelected={isTeamOnScreen} onClick={() => scrollTo(teamRef)}>Team</NavTab>
+                <NavTab isSelected={isContactOnScreen} onClick={() => scrollTo(contactRef)}>Contact Us</NavTab>
             </NavTabs>
-            <GetInTouch onClick={() => scrollTo(contactRef)}>Get in touch</GetInTouch>
+            <MobileNavButton src={MobileMenuButton} onClick={() => setMobileNav(!mobileNav)}/>
+            <MobileNavMenu mobileNav={mobileNav}>
+              <>
+                <MobileNavButton src={MobileMenuButton} onMobileNav onClick={() => setMobileNav(!mobileNav)}/>
+                <NavTab isSelected={isHomeOnScreen} onClick={() => { scrollTo(homeRef); setMobileNav(false)}}>Home</NavTab>
+                <NavTab isSelected={isAboutonScreen} onClick={() => { scrollTo(aboutRef); setMobileNav(false)}}>About</NavTab>
+                <NavTab isSelected={isServicesOnScreen} onClick={() => { scrollTo(servicesRef); setMobileNav(false)}}>Services</NavTab>
+                <NavTab isSelected={isTeamOnScreen} onClick={() => { scrollTo(teamRef); setMobileNav(false)}}>Team</NavTab>
+                <NavTab isSelected={isContactOnScreen} onClick={() => { scrollTo(contactRef); setMobileNav(false)}}>Contact Us</NavTab>    
+              </>
+            </MobileNavMenu>
+            <GetInTouch onClick={() => { scrollTo(contactRef); setMobileNav(false)}}>Get in touch</GetInTouch>
         </NavBody>
     );
 }

@@ -18,5 +18,5 @@
 }
 
 .calendly-inline-widget {
-  height: 900px !important;
+  min-height: 900px !important;
 }

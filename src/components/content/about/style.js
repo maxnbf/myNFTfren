@@ -16,5 +16,10 @@ export const AboutBody = styled.div`
     padding-bottom: 200px;
     animation-name: ${(p) => p.inViewport ? slidedown : 'none'};
     animation-duration: 2s;
+
+    @media (max-width: 767px) {
+        font-size: 22px;
+        width: 80%;
+    }
 `
 

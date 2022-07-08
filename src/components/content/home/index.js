@@ -32,7 +32,7 @@ const Home = ({homeRef, contactRef}) => {
             <InfoRow>
                 <InfoContainer>
                     <InfoHeader>Customers Served</InfoHeader>
-                    <CountUpText duration={2.5} end={24} useEasing={true}></CountUpText>
+                    <CountUpText duration={4.5} end={24} useEasing={true}></CountUpText>
                 </InfoContainer>
                 <InfoContainer>
                     <InfoHeader>Whitelist</InfoHeader>

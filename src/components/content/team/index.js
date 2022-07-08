@@ -19,7 +19,7 @@ const Team = ({teamRef}) => {
                     <Headshot inViewport={inViewport && enterCount === 1} src={headshot}/>
                     <NFT inViewport={inViewport && enterCount === 1} src={nft}/>
                 </Images>
-                <JesseDescription>
+                <JesseDescription inViewport={inViewport && enterCount === 1}>
                     I’m Jesse, founder of myNFTfren, and an OG NFT Degen looking to make our crazy space more convenient and stress free for everyone
                 </JesseDescription>
             </JesseBody>

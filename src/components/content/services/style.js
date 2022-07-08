@@ -1,9 +1,13 @@
 import styled, { keyframes } from 'styled-components'
 
-export const ServiceCards = styled.div`
+export const ServiceCardsContainer = styled.div`
     display: flex;
     width: 95%;
     margin: auto;
+
+    @media (max-width: 767px) {
+        display: block;
+    }
 `
 
 const slidedown = keyframes`
@@ -25,7 +29,12 @@ export const ServiceCard = styled.div`
 
     animation-name: ${(p) => p.inViewport ? p.card === 1 ? slideup : slidedown : 'none'};
     animation-duration: 2s;
-    transform: scale(${(p) => p.scale})
+    transform: scale(${(p) => p.scale});
+
+    @media (max-width: 767px) {
+        transform: scale(1);
+        width: auto;
+    }
 `
 
 export const ServiceCardHeader = styled.div`
@@ -38,6 +47,14 @@ export const ServiceCardHeader = styled.div`
     padding: 10px;
     margin: 0px 15px 0px 15px;
     height: 7%;
+
+
+    @media (max-width: 767px) {
+        font-size: 24px;
+        justify-content: center;
+        align-items: center;
+    }
+
 `
 
 export const ServiceCardDescription = styled.div`
@@ -46,7 +63,10 @@ export const ServiceCardDescription = styled.div`
     padding: 20px 10px 20px 10px;
     border-bottom: 2px solid #36B3A1;
     margin: 0px 15px 0px 15px;
-    height: 30%;
+    
+    @media (min-width: 767px) {
+        height: 30%;
+    }
 `
 
 export const ServiceCardPayment = styled.div`
@@ -58,6 +78,14 @@ export const ServiceCardPayment = styled.div`
     justify-content: center;
     display: flex;
     cursor: pointer;
+
+        
+    @media (max-width: 767px) {
+        margin: 5px;
+        padding: 20px;
+        font-size: 20px;
+    }
+
 `
 
 
