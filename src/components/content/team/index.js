@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useInViewport } from 'react-in-viewport';
 import headshot from "../../../assets/Headshot.png"
 import nft from "../../../assets/Psychedelic NFT.png"
@@ -7,13 +7,12 @@ import { SectionHeader } from '../style';
 
 const Team = ({teamRef}) => {
 
-    const myRef = useRef();
-    const { inViewport, enterCount } = useInViewport(myRef);
+    const { inViewport, enterCount } = useInViewport(teamRef);
 
 
     return (
-        <div ref={myRef}>
-            <SectionHeader ref={teamRef} scrollMargin={100}>Meet the Team</SectionHeader>
+        <div ref={teamRef} style={{scrollMarginTop: '100px'}}>
+            <SectionHeader scrollMargin={100}>Meet the Team</SectionHeader>
             <JesseBody >
                 <Images>
                     <Headshot inViewport={inViewport && enterCount === 1} src={headshot}/>

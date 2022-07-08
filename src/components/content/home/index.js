@@ -23,8 +23,8 @@ const whitelist = [{src: img1, name:"Invisible Friends"}, {src: img2, name:"HAPE
 const Home = ({homeRef, contactRef}) => {
 
     return (
-        <div>
-            <Logo ref={homeRef} src={logo} />
+        <div ref={homeRef} style={{scrollMarginTop: '100px'}}>
+            <Logo src={logo} />
             <SubText>Whitelist grind, Fan art, Marketing lists, and more!</SubText>
             <SubText>Your virtual NFT assistant to handle any and all tasks</SubText>
             <BookAMeeting onClick={() => scrollTo(contactRef)}>Book a meeting</BookAMeeting>

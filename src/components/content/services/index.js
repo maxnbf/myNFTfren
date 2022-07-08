@@ -1,35 +1,33 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useInViewport } from 'react-in-viewport';
 import { SectionHeader } from '../style';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; 
-import { Carousel } from 'react-responsive-carousel';
+
 import ServiceCards from './service-cards';
 
 import ServiceCardPaymentButton from './service-card-payment-button';
-import { ServiceCard, ServiceCardDescription, ServiceCardHeader, ServiceCardPaymentContainer, ServiceCardsContainer } from './style';
-
+import { ServiceCard, ServiceCardDescription, ServiceCardHeader, ServiceCardPaymentContainer, ServiceCardsContainer, StyledCarousel } from './style';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 
 
 const Services = ({servicesRef}) => {
 
-    const myRef = useRef();
-    const { inViewport, enterCount } = useInViewport(myRef);
+    const { inViewport, enterCount } = useInViewport(servicesRef);
 
     const [isDesktop, setIsDesktop] = useState(false);
 
     useEffect(() => {
-        window.innerWidth > 600 ?
+        window.innerWidth > 1000 ?
             setIsDesktop(true) : setIsDesktop(false);
     }, []);
 
     window.addEventListener('resize', () => {
-        window.innerWidth > 600 ?
+        window.innerWidth > 1000 ?
             setIsDesktop(true) : setIsDesktop(false);
     });
 
     return (
-        <div ref={myRef}>
-            <SectionHeader ref={servicesRef} scrollMargin={100}>Our Services</SectionHeader>
+        <div ref={servicesRef} style={{scrollMarginTop: '100px'}}>
+            <SectionHeader scrollMargin={100}>Our Services</SectionHeader>
             { enterCount === 0 
                 ? 
                 <div style={{minHeight: "625px"}}></div> 
@@ -38,7 +36,7 @@ const Services = ({servicesRef}) => {
                     ?  
                         <ServiceCards inViewport={inViewport} enterCount={enterCount}/> 
                     :
-                        <Carousel showArrows={true}>
+                        <StyledCarousel showArrows={true}>
                                 <ServiceCard scale={0.9} inViewport={inViewport && enterCount === 1} card={1} >
                                     <ServiceCardHeader>Fan Art Creator</ServiceCardHeader>
                                     <ServiceCardDescription>Frens with years of freelance art experience, and moreover, diverse NFT fan art portfolios, designing fanart for a project of your choosing</ServiceCardDescription>
@@ -63,7 +61,7 @@ const Services = ({servicesRef}) => {
                                         <ServiceCardPaymentButton text={"0.25 eth"} eth={"0.25"}/>
                                     </ServiceCardPaymentContainer>
                                 </ServiceCard>
-                        </Carousel>
+                        </StyledCarousel>
             }
         </div>
     );

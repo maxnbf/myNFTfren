@@ -9,7 +9,7 @@ const PaymentModal = ({text, eth}) => {
     const { handleModal } = useContext(ModalContext)
     return (
         <Formik
-            initialValues={{ name: '', email: '', ethwallet: '', solwallet: '', additional: '' }}
+            initialValues={{ name: '', email: '', ethwallet: '', solwallet: '', twitter: "", additional: '' }}
             validate={values => {
                 const errors = {};
                 if (!values.email) {
@@ -44,7 +44,9 @@ const PaymentModal = ({text, eth}) => {
                     </div>
                     <div>
                         <InputField type="text" name="solwallet" placeholder="Sol Wallet Address (optional)" />
-                      
+                    </div>
+                    <div>
+                        <InputField type="text" name="twitter" placeholder="Twitter Handle (optional)" />
                     </div>
                     <div>
                         <InputTextArea type="text" name="additional" component="textarea" placeholder="Additional Information"/>

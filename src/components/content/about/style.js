@@ -7,7 +7,7 @@ const slidedown = keyframes`
 
 export const AboutBody = styled.div`
     font-weight: bold;
-    font-size: 32px;
+    font-size: 28px;
     color: white;
     width: 65%;
     margin-left: auto;

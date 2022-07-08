@@ -21,6 +21,10 @@ export const Gmail = styled.img`
     width: 30px;
     height: 30px;
     margin-right: 30px;
+
+    @media (max-width: 767px) {
+        margin-right: 40px;
+    }
 `
 
 export const Twitter = styled.img`
@@ -36,7 +40,6 @@ export const MediaItem = styled.div`
     align-items: center;
 
     @media (max-width: 767px) {
-        justify-content: space-between;
         margin-right: 10px;
 
         ${Gmail} {
@@ -51,4 +54,10 @@ export const MediaLink = styled.a`
     text-decoration: none;
     color: white;
     cursor: pointer;
+
+    @media (max-width: 767px) {
+        font-size: 18px;
+        justify-content: left;
+    }
+
 `
