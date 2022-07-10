@@ -84,9 +84,16 @@ export const InfoContainer = styled.div`
 `
 
 export const InfoHeader = styled.div`
-    font-size: 32px;
+    font-size: 28px;
+    margin-top: -10px;
+    margin-bottom: 10px;
     color: white;
     font-weight: bold;
+
+    @media (max-width: 767px) {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
 `
 
 
