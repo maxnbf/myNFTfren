@@ -2,8 +2,11 @@ import React from 'react';
 import { useInViewport } from 'react-in-viewport';
 import headshot from "../../../assets/Headshot.png"
 import nft from "../../../assets/Psychedelic NFT.png"
-import { Headshot, Images, JesseBody, JesseDescription, NFT, TeamDescription } from './style';
+import { Headshot, Images, JesseBody, JesseDescription, NFT, TeamDescription, TeamMemberImage, TeamMemberName, TeamMemberProfile, TeamMemberRole, TeamProfiles } from './style';
 import { SectionHeader } from '../style';
+
+import advisor from "../../../assets/advisor NFT-modified.png";
+import leaddev from "../../../assets/developer nft-modified.png";
 
 const Team = ({teamRef}) => {
 
@@ -25,6 +28,18 @@ const Team = ({teamRef}) => {
             <TeamDescription inViewport={inViewport && enterCount === 1} >
                 Our virtual assistants are from all over the world, including India, Nigeria, and the Philippines. Each fren went through a minimum of 5 hours of training with our team to ensure they have not only the skillset, but also the necessary familiarity with the NFT space to perform at a high level.
             </TeamDescription>
+            <TeamProfiles>
+                <TeamMemberProfile>
+                    <TeamMemberImage src={advisor}/>
+                    <TeamMemberName>Max</TeamMemberName>
+                    <TeamMemberRole>Advisor</TeamMemberRole>
+                </TeamMemberProfile>
+                <TeamMemberProfile>
+                    <TeamMemberImage src={leaddev}/>
+                    <TeamMemberName>Jason</TeamMemberName>
+                    <TeamMemberRole>Lead Dev</TeamMemberRole>
+                </TeamMemberProfile>
+            </TeamProfiles>
         </div>
     )
 }
