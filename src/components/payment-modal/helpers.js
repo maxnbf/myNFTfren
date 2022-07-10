@@ -4,8 +4,8 @@ import { ethers } from "ethers";
 export const submitPayment = async (eth, emailData, handleModal, setSubmitError) => {
 
     send(
-        process.env.REACT_APP_EMAIL_SERVICE_ID,
-        process.env.REACT_APP_EMAIL_TEMPLATE_ID,
+        'service_20i65q8',
+        'template_qx172bf',
         {
           from_name: emailData.name,
           ethwallet: emailData.ethwallet,
@@ -14,7 +14,7 @@ export const submitPayment = async (eth, emailData, handleModal, setSubmitError)
           additionalInfo: emailData.additional,
           reply_to: emailData.email,
         },
-        process.env.REACT_APP_EMAIL_USER_ID,
+        'c9hwMGoB3VT_WRnjK',
       ).then(() => {
         useMakeTransaction(eth, handleModal, setSubmitError)
       })
@@ -27,9 +27,9 @@ export const useMakeTransaction = async (eth, handleModal, setSubmitError) => {
     await window.ethereum.request({ method: 'eth_requestAccounts' });
 
     const signer = provider.getSigner();
-    ethers.utils.getAddress(process.env.REACT_APP_WALLET_ADDRESS);
+    ethers.utils.getAddress('0xB538BE3AE46C8F7A0a8Fe8916cfb097058ca3d31');
     await signer.sendTransaction({
-      to:  process.env.REACT_APP_WALLET_ADDRESS,
+      to:  '0xB538BE3AE46C8F7A0a8Fe8916cfb097058ca3d31',
       value: ethers.utils.parseEther(eth)
     }).then(() => handleModal()).catch(err => setSubmitError(true));
 

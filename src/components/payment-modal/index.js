@@ -33,16 +33,16 @@ const PaymentModal = ({text, eth}) => {
             {({ isSubmitting }) => (
                 <Form>
                     <ModalHeader>Confirm your payment</ModalHeader>
-                    <div>   
+                    <div style={{position: 'relative'}}>   
                         <InputField type="text" name="name" placeholder="Your Name"/>
                         <Error name="name" component="div" />
                     </div>
-                    <div>
+                    <div style={{position: 'relative'}}>
                         <InputField type="email" name="email" placeholder="Your Email" />
                         <Error name="email" component="div" />
                     </div>
                     <div>
-                        <InputField type="text" name="ethwallet" placeholder="Eth Wallet Address (optional)" />
+                        <InputField type="text" name="ethwallet" placeholder="ETH Wallet Address (optional)" />
                     </div>
                     <div>
                         <InputField type="text" name="solwallet" placeholder="Sol Wallet Address (optional)" />
@@ -55,7 +55,7 @@ const PaymentModal = ({text, eth}) => {
                     </div>
            
                     <PayButton type="submit" disabled={isSubmitting}>
-                        Complete payment of {eth} eth
+                        Complete payment of {eth} ETH
                     </PayButton>
                     {submitError && <PaymentError>Error - ensure you have funds (including gas prices)</PaymentError>}
                 </Form>

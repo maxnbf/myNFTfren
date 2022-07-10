@@ -101,3 +101,46 @@ export const TeamDescription = styled.div`
         animation-name: none;
     }
 `
+
+export const TeamProfiles = styled.div`
+
+    @media (min-width: 767px) {
+        display: flex;
+        width: 40%;
+        margin: auto;
+        justify-content: space-around;    
+    }
+`
+
+export const TeamMemberProfile = styled.div`
+    margin: 5px;
+`
+
+export const TeamMemberImage = styled.img`
+    width: 175px;
+    height: 175px;
+    border: 3px solid #36B3A1;
+    border-radius: 125px;
+
+    @media (max-width: 767px) {
+        display: flex; 
+        margin: auto;
+        margin-top: 10px;
+    }
+`
+
+export const TeamMemberName = styled.div`
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 10px;
+`
+
+export const TeamMemberRole = styled.div`
+    font-size: 24px;
+    color: #36B3A1;
+    text-align: center;
+    font-weight: bolder;
+
+`

@@ -35,7 +35,7 @@ const Home = ({homeRef, contactRef}) => {
                     <CountUpText duration={4.5} end={24} useEasing={true}></CountUpText>
                 </InfoContainer>
                 <InfoContainer>
-                    <InfoHeader>Whitelist</InfoHeader>
+                    <InfoHeader>Notable Whitelists Acquired</InfoHeader>
                     <Icons>
                     {
                         whitelist.map((icon) => <IconWrapper><IconImage src={icon.src}></IconImage><IconName>{icon.name}</IconName></IconWrapper>)
