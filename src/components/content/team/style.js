@@ -4,6 +4,7 @@ export const JesseBody = styled.div`
     display: flex;
     width: 70%;
     margin: auto;
+    justify-content: center;
 
     @media (max-width: 767px) {
         display: block;

@@ -13,7 +13,7 @@ export const AboutBody = styled.div`
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
     animation-name: ${(p) => p.inViewport ? slidedown : 'none'};
     animation-duration: 2s;
 

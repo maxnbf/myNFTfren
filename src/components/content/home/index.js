@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookAMeeting, CountUpText, IconImage, IconName, Icons, IconWrapper, InfoContainer, InfoHeader, InfoRow, Logo, SubText } from './style';
+import { BookAMeeting, CountUpText, IconImage, IconName, Icons, IconWrapper, InfoContainer, InfoHeader, InfoRow, Logo, LogosContainer, ProjectItem, ProjectLogo, ProjectName, Projects, ProjectTitle, SubText } from './style';
 
 import logo from '../../../assets/image1.png'
 import img1 from "../../../assets/InvisibleFriends1.png"
@@ -14,6 +14,12 @@ import img9 from "../../../assets/Loser Club9.png"
 import img10 from "../../../assets/Memeland10.png"
 import img11 from "../../../assets/Rarebears11.png"
 import img12 from "../../../assets/Tasty Bones12.png"
+
+import img13 from "../../../assets/Memeland.png"
+import img14 from "../../../assets/OperationSIN.png"
+import img15 from "../../../assets/Zoonies.png"
+
+
 import { scrollTo } from '../../navbar';
 
 const whitelist = [{src: img1, name:"Invisible Friends"}, {src: img2, name:"HAPE Prime"}, {src: img3, name:"The Possessed"}, {src: img4, name:"Sneakerheads"},
@@ -43,6 +49,23 @@ const Home = ({homeRef, contactRef}) => {
                     </Icons>
                 </InfoContainer>
             </InfoRow>
+            <LogosContainer>
+                <ProjectTitle>Upcoming Projects</ProjectTitle>
+                <Projects>
+                    <ProjectItem href={"https://twitter.com/Memeland"} target="_blank">
+                        <ProjectLogo src={img13}/>
+                        <ProjectName>Memeland</ProjectName>
+                    </ProjectItem>
+                    <ProjectItem href={"https://twitter.com/operationSIN"} target="_blank">
+                        <ProjectLogo src={img14}/>
+                        <ProjectName>operationSIN</ProjectName>
+                    </ProjectItem>
+                    <ProjectItem href={"https://twitter.com/ZooniesXYZ"} target="_blank">
+                        <ProjectLogo src={img15}/>
+                        <ProjectName>Zoonies</ProjectName>
+                    </ProjectItem>
+                </Projects>
+            </LogosContainer>
         </div>
     )
 }

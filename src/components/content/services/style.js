@@ -4,7 +4,9 @@ import { Carousel } from 'react-responsive-carousel';
 export const ServiceCardsContainer = styled.div`
     display: flex;
     width: 95%;
+    justify-content: center;
     margin: auto;
+    margin-bottom: 250px;
 
     @media (max-width: 767px) {
         display: block;

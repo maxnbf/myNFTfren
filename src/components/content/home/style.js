@@ -23,7 +23,6 @@ export const SubText = styled.div`
     font-weight: bold;
     font-size: 20px;
     margin: 8px 0;
-    font-family: 'Neuropol', sans-serif;
 
     @media (max-width: 767px) {
         width: 90%;
@@ -63,7 +62,7 @@ export const InfoRow = styled.div`
     display: flex;
     justify-content: space-evenly;
     margin-top: 50px;
-    padding-bottom: 150px;
+    padding-bottom: 50px;
 
     @media (max-width: 767px) {
         display: block;
@@ -84,11 +83,16 @@ export const InfoContainer = styled.div`
 `
 
 export const InfoHeader = styled.div`
-    font-size: 28px;
+    font-size: 26px;
     margin-top: -10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     color: white;
     font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 
     @media (max-width: 767px) {
         font-size: 18px;
@@ -141,3 +145,59 @@ export const IconWrapper = styled.div`
 `
  
 
+export const LogosContainer = styled.div`
+    width: 78%;
+    margin: auto;
+
+    @media (max-width: 767px) {
+        width: 95%;
+    }
+`
+
+export const ProjectLogo = styled.img`
+    border: 3px solid #36B3A1;
+    border-radius: 150px;
+    width: 200px;
+    height: 200px;
+
+
+    @media (max-width: 767px) {
+        display: flex;
+        margin: auto;
+    }
+
+`
+
+export const ProjectItem = styled.a`
+    padding: 50px;
+    cursor: pointer;
+    text-decoration: none;
+
+    @media (min-width: 767px) {
+        padding: 50px;
+    }
+`
+
+export const ProjectName = styled.div`
+    font-size: 24px;
+    color: #36B3A1;
+    text-align: center;
+    font-weight: bolder;
+    padding: 10px;
+`
+
+export const ProjectTitle = styled.div`
+    width: 100%;
+    font-size: 32px;
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+    padding: 10px;
+`
+
+export const Projects = styled.div`
+    @media (min-width: 767px) {
+        justify-content: space-around;
+        display: flex;
+    }
+`
